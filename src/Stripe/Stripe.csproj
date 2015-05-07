@@ -36,8 +36,8 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -52,6 +52,13 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Entities\StripeAccountVerification.cs" />
+    <Compile Include="Entities\StripeBankAccountList.cs" />
+    <Compile Include="Entities\StripeDeclineChargeOn.cs" />
+    <Compile Include="Entities\StripeLegalEntityVerification.cs" />
+    <Compile Include="Entities\StripeAddress.cs" />
+    <Compile Include="Entities\StripeDate.cs" />
+    <Compile Include="Entities\StripeLegalEntity.cs" />
     <Compile Include="Entities\StripeList.cs" />
     <Compile Include="Entities\StripeRefund.cs" />
     <Compile Include="Entities\StripeBankAccount.cs" />
@@ -59,9 +66,16 @@
     <Compile Include="Entities\StripeFee.cs" />
     <Compile Include="Entities\StripeObject.cs" />
     <Compile Include="Entities\StripeRecipientActiveAccount.cs" />
+    <Compile Include="Entities\StripeTOSAcceptance.cs" />
     <Compile Include="Entities\StripeTransferReversal.cs" />
     <Compile Include="Constants\StripeRefundReasons.cs" />
+    <Compile Include="Entities\StripeTransferSchedule.cs" />
     <Compile Include="Infrastructure\ExpandableProperty.cs" />
+    <Compile Include="Services\Account\StripeAccountCreateOptions.cs" />
+    <Compile Include="Services\Account\StripeAddressOptions.cs" />
+    <Compile Include="Services\Account\StripeDobOptions.cs" />
+    <Compile Include="Services\Account\StripeLegalEntityOptions.cs" />
+    <Compile Include="Services\Account\StripeTOSAcceptanceOptions.cs" />
     <Compile Include="Services\Balance\StripeBalanceTransactionListOptions.cs" />
     <Compile Include="Services\Refunds\StripeRefundCreateOptions.cs" />
     <Compile Include="Services\Refunds\StripeRefundService.cs" />
