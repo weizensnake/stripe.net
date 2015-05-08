@@ -15,7 +15,7 @@ namespace Stripe
         public int? MonthlyAnchor { get; set; }
 
         [JsonProperty( "weekly_anchor" )]
-        public int? WeeklyAnchor { get; set; }
+        public string WeeklyAnchor { get; set; }
 
         [JsonProperty( "metadata" )]
         public Dictionary<string, string> Metadata { get; set; }

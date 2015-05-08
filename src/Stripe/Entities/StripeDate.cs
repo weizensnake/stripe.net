@@ -5,12 +5,12 @@ namespace Stripe
     public class StripeDate
     {
         [JsonProperty( "day" )]
-        public string Day { get; set; }
+        public int Day { get; set; }
 
         [JsonProperty( "month" )]
-        public string Month { get; set; }
+        public int Month { get; set; }
 
         [JsonProperty( "year" )]
-        public string Year { get; set; }
+        public int Year { get; set; }
     }
 }

@@ -15,6 +15,9 @@ namespace Stripe
         [JsonProperty( "business_url" )]
         public string BusinessUrl { get; set; }
 
+        [JsonProperty( "country" )]
+        public string Country { get; set; }
+
         [JsonProperty( "support_phone" )]
         public string SupportPhone { get; set; }
 
