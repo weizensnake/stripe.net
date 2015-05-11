@@ -23,6 +23,9 @@ namespace Stripe
         [JsonProperty("bank_name")]
         public string BankName { get; set; }
 
+        [JsonProperty( "routing_number" )]
+        public string RoutingNumber { get; set; }
+
         [JsonProperty("fingerprint")]
         public string Fingerprint { get; set; }
 

@@ -52,6 +52,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Entities\StripeAccountKeys.cs" />
     <Compile Include="Entities\StripeAccountVerification.cs" />
     <Compile Include="Entities\StripeBankAccountList.cs" />
     <Compile Include="Entities\StripeDeclineChargeOn.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Constants\StripeRefundReasons.cs" />
     <Compile Include="Entities\StripeTransferSchedule.cs" />
     <Compile Include="Infrastructure\ExpandableProperty.cs" />
+    <Compile Include="Infrastructure\SerializeAsHash.cs" />
     <Compile Include="Services\Account\StripeAccountCreateOptions.cs" />
     <Compile Include="Services\Account\StripeAddressOptions.cs" />
     <Compile Include="Services\Account\StripeDobOptions.cs" />

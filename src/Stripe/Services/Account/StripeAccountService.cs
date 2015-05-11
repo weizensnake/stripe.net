@@ -13,7 +13,7 @@
 
         public virtual StripeAccount Create(StripeAccountCreateOptions createOptions)
         {
-            var url = this.ApplyAllParameters( createOptions, Urls.Account, false );
+            var url = this.ApplyAllParameters( createOptions, Urls.Accounts, false );
 
             var response = Requestor.PostString( url, ApiKey );
 
@@ -22,7 +22,7 @@
 
         public virtual void Delete( string accountId )
         {
-            var url = string.Format( "{0}/{1}", Urls.Account, accountId );
+            var url = string.Format( "{0}/{1}", Urls.Accounts, accountId );
 
             Requestor.Delete( url, ApiKey );
         }

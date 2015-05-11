@@ -43,9 +43,11 @@ namespace Stripe
         public string DefaultCurrency { get; set; }
 
         [JsonProperty( "tos_acceptance" )]
+        [SerializeAsHash]
         public StripeTOSAcceptanceOptions TOSAcceptance { get; set; }
 
         [JsonProperty( "legal_entity" )]
+        [SerializeAsHash]
         public StripeLegalEntityOptions LegalEntity { get; set; }
     }
 }

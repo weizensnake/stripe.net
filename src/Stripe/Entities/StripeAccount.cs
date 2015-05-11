@@ -7,6 +7,9 @@ namespace Stripe
         [JsonProperty("object")]
         public string Object { get; set; }
 
+        [JsonProperty( "keys" )]
+        public StripeAccountKeys Keys { get; set; }
+
         [JsonProperty("charges_enabled")]
         public bool ChargesEnabled { get; set; }
 

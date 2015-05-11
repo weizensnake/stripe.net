@@ -34,12 +34,15 @@ namespace Stripe
         public string LastName { get; set; }
 
         [JsonProperty( "dob" )]
+        [SerializeAsHash]
         public StripeDobOptions DOB { get; set; }
 
         [JsonProperty( "address" )]
+        [SerializeAsHash]
         public StripeAddressOptions Address { get; set; }
 
         [JsonProperty( "pesonal_address" )]
+        [SerializeAsHash]
         public StripeAddressOptions PersonalAddress { get; set; }
     }
 }
