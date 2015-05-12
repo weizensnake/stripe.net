@@ -3,8 +3,7 @@ using Newtonsoft.Json;
 
 namespace Stripe
 {
-    //Part of our implementation of the StripeAccountService functionality that is currently missing in Stripe.net.
-    public class StripeAccountCreateOptions
+    public class StripeAccountUpdateOptions
     {
         [JsonProperty( "email" )]
         public string Email { get; set; }
@@ -14,9 +13,6 @@ namespace Stripe
 
         [JsonProperty( "business_url" )]
         public string BusinessUrl { get; set; }
-
-        [JsonProperty( "country" )]
-        public string Country { get; set; }
 
         [JsonProperty( "support_phone" )]
         public string SupportPhone { get; set; }
@@ -35,9 +31,6 @@ namespace Stripe
 
         [JsonProperty( "debit_negative_balances" )]
         public bool? DebitNegativeBalances { get; set; }
-
-        [JsonProperty( "managed" )]
-        public bool? Managed { get; set; }
 
         [JsonProperty( "default_currency" )]
         public string DefaultCurrency { get; set; }

@@ -79,7 +79,7 @@ namespace Stripe
                 }
             }
 
-            if (service != null)
+            if (service != null && string.IsNullOrEmpty( baseParameterName ) )
             {
                 var propertiesToExpand = service.GetType()
                     .GetProperties(BindingFlags.Public | BindingFlags.Instance)

@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Stripe.Infrastructure;
 
 namespace Stripe
 {
@@ -9,6 +10,7 @@ namespace Stripe
         public string IP { get; set; }
 
         [JsonProperty( "date" )]
+        [JsonConverter( typeof( StripeDateTimeConverter ) )]
         public DateTime? Date { get; set; }
 
         [JsonProperty( "user_agent" )]

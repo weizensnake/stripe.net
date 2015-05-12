@@ -74,10 +74,12 @@
     <Compile Include="Infrastructure\ExpandableProperty.cs" />
     <Compile Include="Infrastructure\SerializeAsHash.cs" />
     <Compile Include="Services\Account\StripeAccountCreateOptions.cs" />
+    <Compile Include="Services\Account\StripeAccountUpdateOptions.cs" />
     <Compile Include="Services\Account\StripeAddressOptions.cs" />
     <Compile Include="Services\Account\StripeDobOptions.cs" />
     <Compile Include="Services\Account\StripeLegalEntityOptions.cs" />
     <Compile Include="Services\Account\StripeTOSAcceptanceOptions.cs" />
+    <Compile Include="Services\Account\StripeTransferScheduleOptions.cs" />
     <Compile Include="Services\Balance\StripeBalanceTransactionListOptions.cs" />
     <Compile Include="Services\Refunds\StripeRefundCreateOptions.cs" />
     <Compile Include="Services\Refunds\StripeRefundService.cs" />
