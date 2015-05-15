@@ -13,5 +13,14 @@ namespace Stripe
 
         [JsonProperty("created")]
         public StripeDateFilter Created { get; set; }
+
+        [JsonProperty( "ending_before" )]
+        public string EndingBefore { get; set; }
+
+        [JsonProperty( "starting_after" )]
+        public string StartingAfter { get; set; }
+
+        [JsonProperty( "limit" )]
+        public int? Limit { get; set; }
     }
 }
