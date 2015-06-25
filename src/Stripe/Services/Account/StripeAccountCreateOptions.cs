@@ -30,6 +30,10 @@ namespace Stripe
         [JsonProperty( "metadata" )]
         public Dictionary<string, string> Metadata { get; set; }
 
+        [JsonProperty( "decline_charge_on" )]
+        [SerializeAsHash]
+        public StripeDeclineChargeOn DeclineChargesOn { get; set; }
+
         [JsonProperty( "bank_account" )]
         public StripeBankAccountOptions BankAccount { get; set; }
 

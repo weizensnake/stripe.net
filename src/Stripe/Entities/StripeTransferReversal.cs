@@ -20,9 +20,19 @@ namespace Stripe
         [JsonProperty("currency")]
         public string Currency { get; set; }
 
-        // todo: this should be an expandable property
-        [JsonProperty("balance_transaction")]
         public string BalanceTransactionId { get; set; }
+
+        [JsonIgnore]
+        public StripeBalanceTransaction BalanceTransaction { get; set; }
+
+        [JsonProperty( "balance_transaction" )]
+        internal object InternalBalanceTransaction
+        {
+            set
+            {
+                ExpandableProperty<StripeBalanceTransaction>.Map( value, s => BalanceTransactionId = s, o => BalanceTransaction = o );
+            }
+        }
 
         [JsonProperty("metadata")]
         public Dictionary<string, string> Metadata { get; set; }

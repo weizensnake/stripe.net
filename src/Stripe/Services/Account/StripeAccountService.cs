@@ -11,6 +11,17 @@
             return Mapper<StripeAccount>.MapFromJson(response);
         }
 
+        //Returns the connected account with the given id.
+        public virtual StripeAccount Get( string accountId )
+        {
+            var url = string.Format( "{0}/{1}", Urls.Accounts, accountId );
+            url = this.ApplyAllParameters( null, url, false );
+
+            var response = Requestor.GetString( url, ApiKey );
+
+            return Mapper<StripeAccount>.MapFromJson( response );
+        }
+
         public virtual StripeAccount Create(StripeAccountCreateOptions createOptions)
         {
             var url = this.ApplyAllParameters( createOptions, Urls.Accounts, false );

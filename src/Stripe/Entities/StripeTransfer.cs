@@ -44,6 +44,8 @@ namespace Stripe
         public int AmountReversed { get; set; }
 
         public string BalanceTransactionId { get; set; }
+
+        [JsonIgnore]
         public StripeBalanceTransaction BalanceTransaction { get; set; }
 
         [JsonProperty("balance_transaction")]
@@ -67,14 +69,10 @@ namespace Stripe
         [JsonProperty("metadata")]
         public Dictionary<string, string> Metadata { get; set; }
 
-        [JsonProperty("bank_account")]
-        public StripeBankAccount StripeBankAccount { get; set; }
-
-        [JsonProperty("card")]
-        public StripeCard Card { get; set; }
-
+        //Deprecated
         public string RecipientId { get; set; }
 
+        //Deprecated
         [JsonIgnore]
         public StripeRecipient Recipient { get; set; }
 
@@ -89,5 +87,48 @@ namespace Stripe
 
         [JsonProperty("statement_descriptor")]
         public string StatementDescriptor { get; set; }
+        
+        public string DestinationId { get; set; }
+
+        [JsonIgnore]
+        public StripeObject Destination { get; set; }
+
+        [JsonProperty( "destination" )]
+        internal object InternalDestination
+        {
+            set
+            {
+                ExpandableProperty<StripeObject>.Map( value, s => DestinationId = s, o => Destination = o );
+
+                //find out what this object really is and parse it
+                if( DestinationId != null )
+                {
+                    if( DestinationId.StartsWith( "ba_" ) )
+                        ExpandableProperty<StripeBankAccount>.Map( value, s => DestinationId = s, o => Destination = o );
+                    else if( DestinationId.StartsWith( "acct_" ) )
+                        ExpandableProperty<StripeAccount>.Map( value, s => DestinationId = s, o => Destination = o );
+                    else if( DestinationId.StartsWith( "card_" ) )
+                        ExpandableProperty<StripeCard>.Map( value, s => DestinationId = s, o => Destination = o );
+                }
+            }
+        }
+
+        public string SourceTransactionId { get; set; }
+
+        //We assume the source transaction is a charge. 
+        //Apparently a transfer can be sourced from other transactions as well but I could net find information on which ones.
+        [JsonIgnore]
+        public StripeCharge SourceTransaction { get; set; }
+
+        [JsonProperty( "source_transaction" )]
+        internal object InternalSourceTransaction
+        {
+            set
+            {
+                ExpandableProperty<StripeCharge>.Map( value, s => SourceTransactionId = s, o => SourceTransaction = o );
+            }
+        }
+
+        //TODO: destination_payment
     }
 }

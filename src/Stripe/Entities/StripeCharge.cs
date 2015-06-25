@@ -32,6 +32,9 @@ namespace Stripe
         [JsonProperty("refunded")]
         public bool Refunded { get; set; }
 
+        [JsonProperty( "status" )]
+        public string Status { get; set; }
+
         [JsonProperty("refunds")]
         public StripeList<StripeRefund> StripeRefundList { get; set; }
 

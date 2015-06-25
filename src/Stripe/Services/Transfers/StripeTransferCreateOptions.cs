@@ -17,11 +17,11 @@ namespace Stripe
         [JsonProperty("description")]
         public string Description { get; set; }
 
-        [JsonProperty("bank_account")]
-        public string BankAccountId { get; set; }
+        [JsonProperty("destination")]
+        public string Destination { get; set; }
 
-        [JsonProperty("card")]
-        public string CardId { get; set; }
+        [JsonProperty( "source_transaction" )]
+        public string SourceTransactionId { get; set; }
 
         [JsonProperty("statement_descriptor")]
         public string StatementDescriptor { get; set; }

@@ -171,6 +171,9 @@
     <Compile Include="Infrastructure\Urls.cs" />
     <Compile Include="Infrastructure\ParameterBuilder.cs" />
     <Compile Include="Infrastructure\Requestor.cs" />
+    <Compile Include="Services\TransferReversals\StripeTransferReversalCreateOptions.cs" />
+    <Compile Include="Services\TransferReversals\StripeTransferReversalListOptions.cs" />
+    <Compile Include="Services\TransferReversals\StripeTransferReversalService.cs" />
     <Compile Include="Services\Transfers\StripeTransferListOptions.cs" />
     <Compile Include="Services\Transfers\StripeTransferCreateOptions.cs" />
     <Compile Include="Services\Transfers\StripeTransferService.cs" />
@@ -180,6 +183,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
