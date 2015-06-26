@@ -36,9 +36,19 @@ namespace Stripe
 
         [JsonProperty("metadata")]
         public Dictionary<string, string> Metadata { get; set; }
-
-        // todo: this should be an expandable property
-        [JsonProperty("transfer")]
+        
         public string TransferId { get; set; }
+
+        [JsonIgnore]
+        public StripeTransfer Transfer { get; set; }
+
+        [JsonProperty( "transfer" )]
+        internal object InternalTransfer
+        {
+            set
+            {
+                ExpandableProperty<StripeTransfer>.Map( value, s => TransferId = s, o => Transfer = o );
+            }
+        }
     }
 }

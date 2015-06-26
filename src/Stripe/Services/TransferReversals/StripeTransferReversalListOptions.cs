@@ -4,7 +4,7 @@ namespace Stripe
 {
     public class StripeTransferReversalListOptions
     {
-        [JsonProperty( "transfer_id" )]
+        [JsonProperty( "id" )]
         public string TransferId { get; set; }
     }
 }

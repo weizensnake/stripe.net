@@ -85,6 +85,10 @@
     <Compile Include="Services\Account\StripeLegalEntityOptions.cs" />
     <Compile Include="Services\Account\StripeTOSAcceptanceOptions.cs" />
     <Compile Include="Services\Account\StripeTransferScheduleOptions.cs" />
+    <Compile Include="Services\ApplicationFeeRefunds\StripeApplicationFeeRefundCreateOptions.cs" />
+    <Compile Include="Services\ApplicationFeeRefunds\StripeApplicationFeeRefundListOptions.cs" />
+    <Compile Include="Services\ApplicationFeeRefunds\StripeApplicationFeeRefundService.cs" />
+    <Compile Include="Services\ApplicationFeeRefunds\StripeApplicationFeeRefundUpdateOptions.cs" />
     <Compile Include="Services\Balance\StripeBalanceTransactionListOptions.cs" />
     <Compile Include="Services\Refunds\StripeRefundCreateOptions.cs" />
     <Compile Include="Services\Refunds\StripeRefundService.cs" />

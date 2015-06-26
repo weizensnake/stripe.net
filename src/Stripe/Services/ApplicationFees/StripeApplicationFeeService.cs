@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Stripe
 {
@@ -20,6 +21,7 @@ namespace Stripe
             return Mapper<StripeApplicationFee>.MapFromJson(response);
         }
 
+        [Obsolete( "Use StripeApplicationFeeRefundService.Create instead" )]
         public virtual StripeApplicationFee Refund(string applicationFeeId, int? refundAmount = null)
         {
             var url = string.Format("{0}/{1}/refund", Urls.ApplicationFees, applicationFeeId);

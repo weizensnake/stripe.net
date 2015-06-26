@@ -10,6 +10,8 @@ namespace Stripe
         public bool ExpandBalanceTransaction { get; set; }
         public bool ExpandCustomer { get; set; }
         public bool ExpandInvoice { get; set; }
+        public bool ExpandTransfer { get; set; }
+        public bool ExpandApplicationFee { get; set; }
 
         public virtual StripeCharge Create(StripeChargeCreateOptions createOptions)
         {

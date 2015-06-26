@@ -110,8 +110,33 @@ namespace Stripe
         [JsonProperty( "destination" )]
         public string DestinationAccountId { get; set; }
 
+        public string TransferId { get; set; }
+
+        [JsonIgnore]
+        public StripeTransfer Transfer { get; set; }
+
+        [JsonProperty( "transfer" )]
+        internal object InternalTransfer
+        {
+            set
+            {
+                ExpandableProperty<StripeTransfer>.Map( value, s => TransferId = s, o => Transfer = o );
+            }
+        }
+
+        public string ApplicationFeeId { get; set; }
+
+        [JsonIgnore]
+        public StripeApplicationFee ApplicationFee { get; set; }
+
         [JsonProperty( "application_fee" )]
-        public string ApplicationFee { get; set; }
+        internal object InternalApplicationFee
+        {
+            set
+            {
+                ExpandableProperty<StripeApplicationFee>.Map( value, s => ApplicationFeeId = s, o => ApplicationFee = o );
+            }
+        }
 
         // todo: hash, fraud details
 

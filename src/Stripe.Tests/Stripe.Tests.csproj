@@ -142,6 +142,8 @@
     <Compile Include="subscriptions\when_updating_trial_end_of_subscription.cs" />
     <Compile Include="tokens\when_creating_a_token_with_a_customer.cs" />
     <Compile Include="tokens\when_creating_a_token_with_an_api_key.cs" />
+    <Compile Include="transferreversals\test_data\stripe_transfer_reversal_create_options.cs" />
+    <Compile Include="transferreversals\when_reverting_a_transfer_completely.cs" />
     <Compile Include="transfers\test_data\stripe_transfer_create_options.cs" />
     <Compile Include="transfers\transfer_behaviors.cs" />
     <Compile Include="transfers\when_creating_a_transfer.cs" />

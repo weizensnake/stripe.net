@@ -31,7 +31,7 @@ namespace Stripe
             return Mapper<StripeTransferReversal>.MapFromJson( response );
         }
 
-        public virtual IEnumerable<StripeTransferReversal> List( StripeTransferReversalListOptions listOptions = null )
+        public virtual IEnumerable<StripeTransferReversal> List( StripeTransferReversalListOptions listOptions )
         {
             var url = string.Format( "{0}/{1}/reversals", Urls.Transfers, listOptions.TransferId );
             url = this.ApplyAllParameters( null, url, false );
